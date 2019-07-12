@@ -14,7 +14,9 @@ steps:
   inputs:
     actions: 'build'
     packageApp: false
-    signingOption: 'default'
+    signingOption: 'manual'
+    signingIdentity: 'XSQKU9RHU8'
+    provisioningProfileName: 'Wildcard_Dev'
     scheme: ''
     sdk: 'iphoneos'
     configuration: 'Release'

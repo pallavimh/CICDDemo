@@ -10,21 +10,18 @@ pool:
   vmImage: 'macos-latest'
 
 variables:
-  scheme: ''
+  #scheme: ''
   sdk: 'iphoneos'
-  configuration: 'Release'
+  configuration: ''
 
 steps:
 - task: Xcode@5
   inputs:
     actions: 'build'
     packageApp: false
-    signingOption: 'manual'
-    signingIdentity: 'XSQKU9RHU8'
-    provisioningProfileName: 'Wildcard_Dev'
-    scheme: '$(scheme)'
+    scheme: 'CICDDemo'
     sdk: '$(sdk)'
     configuration: '$(configuration)'
-    xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
-    exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
+    xcWorkspacePath: '**/*.xcodeproj/CICDDemo.xcworkspace'
+    #exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
     xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath

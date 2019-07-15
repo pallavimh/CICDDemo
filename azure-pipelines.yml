@@ -9,6 +9,11 @@ trigger:
 pool:
   vmImage: 'macos-latest'
 
+variables:
+  scheme: ''
+  sdk: 'iphoneos'
+  configuration: 'Release'
+
 steps:
 - task: Xcode@5
   inputs:
@@ -17,8 +22,9 @@ steps:
     signingOption: 'manual'
     signingIdentity: 'XSQKU9RHU8'
     provisioningProfileName: 'Wildcard_Dev'
-    scheme: ''
-    sdk: 'iphoneos'
-    configuration: 'Release'
+    scheme: '$(scheme)'
+    sdk: '$(sdk)'
+    configuration: '$(configuration)'
     xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+    exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
     xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath

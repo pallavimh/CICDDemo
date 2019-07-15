@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  CICDDemo
 //
-//  Created by Pallavi Mhaske on 10/07/19.
+//  Created by Pallavi Mhaske on 15/07/19.
 //  Copyright © 2019 Pallavi Mhaske. All rights reserved.
 //
 
@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view, typically from a nib.
     }
 
 

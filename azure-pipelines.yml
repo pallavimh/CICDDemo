@@ -22,6 +22,7 @@ steps:
     scheme: 'CICDDemo'
     sdk: '$(sdk)'
     configuration: '$(configuration)'
-    xcWorkspacePath: '**/*.xcodeproj/CICDDemo.xcworkspace'
+    xcWorkspacePath: '**/CICDDemo.xcworkspace'
+#    xcWorkspacePath: '**/*.xcodeproj/CICDDemo.xcworkspace'
     #exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
     xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath

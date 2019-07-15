@@ -20,9 +20,9 @@ steps:
     actions: 'build'
     packageApp: false
     scheme: 'CICDDemo'
-    sdk: '$(sdk)'
-    configuration: '$(configuration)'
+    sdk: 'iphoneos'
+    configuration: 'Debug'
     xcWorkspacePath: '**/CICDDemo.xcodeproj'
 #    xcWorkspacePath: '**/*.xcodeproj/CICDDemo.xcworkspace'
     #exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
-    xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath
+   # xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath

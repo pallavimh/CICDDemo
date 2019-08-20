@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //Sample demos
+        
         let i = "5"
         let j = i + i
         print(j)

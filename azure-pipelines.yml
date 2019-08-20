@@ -17,8 +17,11 @@ variables:
 steps:
 - task: Xcode@5
   inputs:
-    actions: 'build'
-    packageApp: false
+    actions: 'build, clean, test, analyze, archive'
+    packageApp: true
+    signingOption: 'default'
+  #  actions: 'build'
+  # packageApp: false
     scheme: 'CICDDemo'
     sdk: 'iphoneos'
     configuration: 'Debug'
@@ -26,3 +29,4 @@ steps:
 #    xcWorkspacePath: '**/*.xcodeproj/CICDDemo.xcworkspace'
     #exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
    # xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath
+   

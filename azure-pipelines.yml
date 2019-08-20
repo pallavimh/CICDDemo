@@ -19,7 +19,7 @@ steps:
   inputs:
     # actions: 'build, clean, test, analyze, archive'
     # packageApp: true
-    signingOption: 'default'
+    # signingOption: 'default'
     actions: 'build'
     packageApp: false
     scheme: 'CICDDemo'

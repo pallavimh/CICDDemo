@@ -18,10 +18,10 @@ steps:
 - task: Xcode@5
   inputs:
     # actions: 'build, clean, test, analyze, archive'
-    packageApp: true
+    # packageApp: true
     # signingOption: 'default'
     actions: 'build'
-    # packageApp: false
+    packageApp: false
     scheme: 'CICDDemo'
     sdk: 'iphoneos'
     configuration: 'Debug'

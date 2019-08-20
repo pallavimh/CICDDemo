@@ -17,10 +17,10 @@ variables:
 steps:
 - task: Xcode@5
   inputs:
-    actions: 'build, clean, test'
+    #actions: 'build, clean, test'
     # packageApp: true
     # signingOption: 'default'
-    # actions: 'build'
+    actions: 'build'
     packageApp: false
     scheme: 'CICDDemo'
     sdk: 'iphoneos'

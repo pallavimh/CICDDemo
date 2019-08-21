@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Sample demos
+        //Going through CD.
         
         let i = "5"
         let j = i + i

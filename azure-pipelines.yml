@@ -15,6 +15,11 @@ variables:
   configuration: ''
 
 steps:
+- task: InstallAppleCertificate@2
+  inputs:
+    certSecureFile: 'Certificates-Dist-Sil.p12'
+    certPwd: $(P12Password)
+
 - task: Xcode@5
   inputs:
     #actions: 'build, clean, test'

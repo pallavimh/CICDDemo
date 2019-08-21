@@ -35,7 +35,7 @@ steps:
     configuration: 'Release'
     xcWorkspacePath: '**/CICDDemo.xcodeproj'
     exportOptions: 'plist'
-    exportOptionsPlist: '/Users/vsts/agent/2.155.1/work/1/s/iOS/CICDDemo/ExportOptions.plist'# path of plist generated in folder for release
+    exportOptionsPlist: '/Users/vsts/agent/2.155.1/work/1/s/CICDDemo/ExportOptions.plist'# path of plist generated in folder for release
     #useXcpretty: false
     #exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
    # xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath

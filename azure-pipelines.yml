@@ -20,25 +20,51 @@ steps:
     certSecureFile: 'Certificates-Dist-Sil.p12'
     certPwd: $(P12Password)
 
-task: InstallAppleProvisioningProfile@1
+- task: InstallAppleProvisioningProfile@1
   inputs:
     provProfileSecureFile: 'CICDRelease.mobileprovision'
 
 
 - task: Xcode@5
   inputs:
-    #actions: 'build, clean, test'
-    # packageApp: true
-    # signingOption: 'default'
-    actions: 'build'
-    packageApp: false
+    actions: 'clean build archive'
+    packageApp: true
+    signingOption: 'default'
+    #actions: 'build'
+    #packageApp: false
     scheme: 'CICDDemo'
     sdk: 'iphoneos'
-    configuration: 'Debug'
+    configuration: 'Release'
     xcWorkspacePath: '**/CICDDemo.xcodeproj'
+    exportOptions: 'plist'
+    exportOptionsPlist: '/Users/vsts/agent/2.155.1/work/1/s/iOS/WeatherApp/ExportOptions.plist'# path of plist generated in folder for release
+    #useXcpretty: false
 #    xcWorkspacePath: '**/*.xcodeproj/CICDDemo.xcworkspace'
     #exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
    # xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath
    
    # Install Apple certificate
 # Install an Apple certificate required to build on a macOS agent machine
+
+
+- task: Xcode@5
+  displayName: 'Running XCTest/XCUITest'
+  inputs:
+    actions: 'test'
+    scheme: 'CICDDemo'
+    sdk: 'iphonesimulator'
+    destinationSimulators: 'iPhone 8'
+    destinationTypeOption: 'simulators'
+    destinationPlatformOption: 'iOS'
+    configuration: 'Debug'
+    signingOption: "auto"
+    xcodeVersion: 'default' # Options: 8, 9, default, specifyPath
+    xcWorkspacePath: '**/CICDDemo.xcodeproj'
+    useXcpretty: true
+    publishJUnitResults: true
+
+#SAVE IPA
+- task: CopyFiles@2
+  inputs:
+    contents: '**/*.ipa'
+    targetFolder: '$(Build.artifactStagingDirectory)/WeatherApp'

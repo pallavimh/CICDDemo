@@ -28,15 +28,19 @@ steps:
 - task: Xcode@5
   inputs:
     actions: 'clean build archive'
-    configuration: 'Release'
-    packageApp: true
-    signingOption: 'default'
-    scheme: 'CICDDemo'
     sdk: 'iphoneos'
-    xcWorkspacePath: '**/CICDDemo.xcodeproj'
+    scheme: 'CICDDemo'
+    configuration: 'Release'
     exportOptions: 'plist'
     exportOptionsPlist: '/Users/vsts/agent/2.155.1/work/1/s/CICDDemo/ExportOptions.plist'# path of plist generated in folder for release
+    packageApp: true
     provisioningProfileName: 'CICDRelease.mobileprovision'
+    signingOption: 'default'
+    useXcpretty: false
+    xcWorkspacePath: '**/CICDDemo.xcodeproj'
+    
+    
+    
     #useXcpretty: false
     #exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
    # xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath

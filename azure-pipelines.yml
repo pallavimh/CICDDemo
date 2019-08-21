@@ -46,7 +46,7 @@ steps:
    # Install Apple certificate
 # Install an Apple certificate required to build on a macOS agent machine
 
-
+#RUN TEST CASES
 - task: Xcode@5
   displayName: 'Running XCTest/XCUITest'
   inputs:
@@ -67,4 +67,28 @@ steps:
 - task: CopyFiles@2
   inputs:
     contents: '**/*.ipa'
-    targetFolder: '$(Build.artifactStagingDirectory)/WeatherApp'
+    targetFolder: '$(Build.artifactStagingDirectory)/CICDDemo'
+
+#show ipa in app Artifact folder in azure pipeline
+- task: PublishBuildArtifacts@1
+  inputs:
+   pathToPublish: '$(build.artifactStagingDirectory)/CICDDemo'
+   artifactName: 'xcarchive-files'
+   artifactType: 'container'
+
+#Distribute in app center
+# - task: AppCenterDistribute@3
+#   inputs:
+#     serverEndpoint: 'App Center Release'
+#     appSlug: 'kushal-pathak-prlk/WeatherApp'
+#     appFile: '$(build.artifactStagingDirectory)/WeatherApp/**/*.ipa'
+#     releaseNotesOption: 'input'
+#     releaseNotesInput: 'CI/CD for iOS'
+#     destinationType: 'groups'
+
+#publish code coverage
+
+#- task: PublishCodeCoverageResults@1
+  # inputs:
+    # codeCoverageTool: 'Cobertura'
+    # summaryFileLocation: '/Users/vsts/agent/2.155.1/work/1/s/iOS/WeatherApp/coverage-reports/cobertura.xml'

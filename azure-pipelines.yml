@@ -12,7 +12,6 @@ pool:
 variables:
   #scheme: ''
   sdk: 'iphoneos'
-  configuration: ''
 
 steps:
 - task: InstallAppleCertificate@2
@@ -36,12 +35,11 @@ steps:
     packageApp: true
     provisioningProfileName: 'CICDRelease.mobileprovision'
     signingOption: 'default'
-    useXcpretty: false
+    # useXcpretty: false
     xcWorkspacePath: '**/CICDDemo.xcodeproj'
     
     
     
-    #useXcpretty: false
     #exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
    # xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath
    

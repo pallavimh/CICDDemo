@@ -30,8 +30,6 @@ steps:
     actions: 'clean build archive'
     packageApp: true
     signingOption: 'default'
-    #actions: 'build'
-    #packageApp: false
     scheme: 'CICDDemo'
     sdk: 'iphoneos'
     configuration: 'Release'
@@ -39,29 +37,26 @@ steps:
     exportOptions: 'plist'
     exportOptionsPlist: '/Users/vsts/agent/2.155.1/work/1/s/iOS/CICDDemo/ExportOptions.plist'# path of plist generated in folder for release
     #useXcpretty: false
-#    xcWorkspacePath: '**/*.xcodeproj/CICDDemo.xcworkspace'
     #exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
    # xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath
    
-   # Install Apple certificate
-# Install an Apple certificate required to build on a macOS agent machine
 
 #RUN TEST CASES
-- task: Xcode@5
-  displayName: 'Running XCTest/XCUITest'
-  inputs:
-    actions: 'test'
-    scheme: 'CICDDemo'
-    sdk: 'iphonesimulator'
-    destinationSimulators: 'iPhone 8'
-    destinationTypeOption: 'simulators'
-    destinationPlatformOption: 'iOS'
-    configuration: 'Debug'
-    signingOption: "auto"
-    xcodeVersion: 'default' # Options: 8, 9, default, specifyPath
-    xcWorkspacePath: '**/CICDDemo.xcodeproj'
-    useXcpretty: true
-    publishJUnitResults: true
+# - task: Xcode@5
+#   displayName: 'Running XCTest/XCUITest'
+#   inputs:
+#     actions: 'test'
+#     scheme: 'CICDDemo'
+#     sdk: 'iphonesimulator'
+#     destinationSimulators: 'iPhone 8'
+#     destinationTypeOption: 'simulators'
+#     destinationPlatformOption: 'iOS'
+#     configuration: 'Debug'
+#     signingOption: "auto"
+#     xcodeVersion: 'default' # Options: 8, 9, default, specifyPath
+#     xcWorkspacePath: '**/CICDDemo.xcodeproj'
+#     useXcpretty: true
+#     publishJUnitResults: true
 
 #SAVE IPA
 - task: CopyFiles@2

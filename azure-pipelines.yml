@@ -26,7 +26,8 @@ steps:
 
 - task: Xcode@5
   inputs:
-    actions: 'clean build archive'
+    actions: 'clean build'
+    # actions: 'clean build archive'
     sdk: 'iphoneos'
     scheme: 'CICDDemo'
     configuration: 'Release'

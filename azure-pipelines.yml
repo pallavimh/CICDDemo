@@ -13,7 +13,8 @@ pool:
 steps:
 - task: InstallAppleCertificate@2
   inputs:
-    certSecureFile: 'Certificates-Dist-Sil.p12'
+    # certSecureFile: 'Certificates-Dist-Sil.p12'
+    certSecureFile: 'DevCertificates.p12'
     certPwd: $(P12Password)
 
 - task: InstallAppleProvisioningProfile@1

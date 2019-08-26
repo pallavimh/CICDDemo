@@ -18,8 +18,8 @@ steps:
 
 - task: InstallAppleProvisioningProfile@1
   inputs:
-    provProfileSecureFile: 'CICDRelease.mobileprovision'
-    # provProfileSecureFile: 'CICD.mobileprovision'
+    # provProfileSecureFile: 'CICDRelease.mobileprovision'
+    provProfileSecureFile: 'CICD.mobileprovision'
 
 
 
@@ -33,8 +33,8 @@ steps:
     exportOptions: 'plist'
     exportOptionsPlist: '/Users/vsts/agent/2.155.1/work/1/s/CICDDemo/ExportOptions.plist'# path of plist generated in folder for release
     packageApp: true
-    # provisioningProfileName: 'CICD.mobileprovision'
-    provisioningProfileName: 'CICDRelease.mobileprovision'
+    provisioningProfileName: 'CICD.mobileprovision'
+    # provisioningProfileName: 'CICDRelease.mobileprovision'
     signingOption: 'default'
     # useXcpretty: false
     xcWorkspacePath: '**/CICDDemo.xcodeproj'

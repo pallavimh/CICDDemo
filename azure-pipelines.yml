@@ -47,21 +47,21 @@ steps:
    
 
 #RUN TEST CASES
-# - task: Xcode@5
-#   displayName: 'Running XCTest/XCUITest'
-#   inputs:
-#     actions: 'test'
-#     scheme: 'CICDDemo'
-#     sdk: 'iphonesimulator'
-#     destinationSimulators: 'iPhone 8'
-#     destinationTypeOption: 'simulators'
-#     destinationPlatformOption: 'iOS'
-#     configuration: 'Debug'
-#     signingOption: "auto"
-#     xcodeVersion: 'default' # Options: 8, 9, default, specifyPath
-#     xcWorkspacePath: '**/CICDDemo.xcodeproj'
-#     useXcpretty: true
-#     publishJUnitResults: true
+- task: Xcode@5
+  displayName: 'Running XCTest/XCUITest'
+  inputs:
+    actions: 'test'
+    scheme: 'CICDDemo'
+    sdk: 'iphonesimulator'
+    destinationSimulators: 'iPhone 8'
+    destinationTypeOption: 'simulators'
+    destinationPlatformOption: 'iOS'
+    configuration: 'Debug'
+    signingOption: "auto"
+    xcodeVersion: 'default' # Options: 8, 9, default, specifyPath
+    xcWorkspacePath: '**/CICDDemo.xcodeproj'
+    useXcpretty: true
+    publishJUnitResults: true
 
 #SAVE IPA
 - task: CopyFiles@2
@@ -86,8 +86,8 @@ steps:
 #     releaseNotesInput: 'CI/CD for iOS'
 #     destinationType: 'groups'
 
-#publish code coverage
 
+#publish code coverage
 #- task: PublishCodeCoverageResults@1
   # inputs:
     # codeCoverageTool: 'Cobertura'

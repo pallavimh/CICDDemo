@@ -6,6 +6,14 @@ target 'CICDDemo' do
   use_frameworks!
 
   # Pods for CICDDemo
+pod 'Moya', '~> 12.0'
+
+    pod 'SwiftKeychainWrapper'
+    pod 'FAPanels'
+    pod 'MBProgressHUD'
+    pod 'ReachabilitySwift'
+    pod 'TPKeyboardAvoiding'
+    pod 'Charts'
 
   target 'CICDDemoTests' do
     inherit! :search_paths
